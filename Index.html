@@ -1,606 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Estancia II</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-      defer
-    ></script>
-  </head>
-  <body class="bg-gray-100">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+
+<body class="bg-gray-100">
     <div class="flex">
-      <!-- SIDEBAR -->
-      <aside
-        class="fixed w-[241px] h-screen bg-white border-r border-[#E5E4E6]"
-      >
-        <div class="mt-4 ml-3">
-          <img
-            src="./assets/images/Logo.png"
-            alt="Logo"
-            class="w-[192px] h-[50px]"
-          />
-        </div>
 
-        <div class="mt-[29px]">
-          <ul class="space-y-2">
-            <li
-              class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer"
-            >
-              <img
-                src="/assets/images/Dashboard.png"
-                alt="Icon"
-                class="w-4 h-4"
-              />
-              <span class="ml-3 text-sm text-gray-700">Dashboard</span>
-            </li>
-            <li
-              class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer"
-            >
-              <img src="/assets/images/Flows.png" alt="Icon" class="w-4 h-4" />
-              <span class="ml-3 text-sm text-gray-700">Flows</span>
-            </li>
-            <li
-              class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer"
-            >
-              <img src="/assets/images/Chats.png" alt="Icon" class="w-4 h-4" />
-              <span class="ml-3 text-sm text-gray-700">Chats</span>
-            </li>
-            <li
-              class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer"
-            >
-              <img src="/assets/images/Users.png" alt="Icon" class="w-4 h-4" />
-              <span class="ml-3 text-sm text-gray-700">Users</span>
-            </li>
-            <li
-              class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer"
-            >
-              <img
-                src="/assets/images/Contactos.png"
-                alt="Icon"
-                class="w-4 h-4"
-              />
-              <span class="ml-3 text-sm text-gray-700">Contactos</span>
-            </li>
-            <li
-              class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer"
-            >
-              <img src="/assets/images/Flujos.png" alt="Icon" class="w-4 h-4" />
-              <span class="ml-3 text-sm text-gray-700">Flujos</span>
-            </li>
-            <li
-              class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer"
-            >
-              <img
-                src="/assets/images/Conversaciones.png"
-                alt="Icon"
-                class="w-4 h-4"
-              />
-              <span class="ml-3 text-sm text-gray-700">Conversaciones</span>
-            </li>
-            <li
-              class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer"
-            >
-              <img
-                src="/assets/images/PasosConversacion.png"
-                alt="Icon"
-                class="w-4 h-4"
-              />
-              <span class="ml-3 text-sm text-gray-700"
-                >Pasos en Conversación</span
-              >
-            </li>
-            <li
-              class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer"
-            >
-              <img src="/assets/images/Roles.png" alt="Icon" class="w-4 h-4" />
-              <span class="ml-3 text-sm text-gray-700">Roles</span>
-            </li>
-            <li
-              class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer"
-            >
-              <img
-                src="/assets/images/Acciones.png"
-                alt="Icon"
-                class="w-4 h-4"
-              />
-              <span class="ml-3 text-sm text-gray-700">Acciones</span>
-            </li>
-          </ul>
-        </div>
-      </aside>
-
-      <!-- NAVBAR -->
-      <nav
-        class="fixed top-0 left-[241px] w-[1286px] h-[57px] bg-white border-b border-[#E5E4E6] flex items-center justify-end pr-6"
-      >
-        <div class="flex items-center space-x-2">
-          <img
-            src="/assets/images/Notificaciones.png"
-            alt="Notification"
-            class="w-4 h-4"
-          />
-          <img
-            src="/assets/images/Perfil.png"
-            alt="Profile"
-            class="w-6 h-6 rounded-full"
-          />
-        </div>
-      </nav>
-
-      <main class="w-full h-screen bg-gray-100 flex flex-col">
-        <div class="mt-[75px] ml-[264px] flex">
-          <div>
-            <div class="w-[304px] h-[153px] bg-[#CBE5FE] p-4">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                  <div class="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
-                  <h2 class="text-lg font-bold text-gray-800">POR HACER</h2>
-                </div>
-                <div
-                  class="w-[43px] h-[27px] bg-[#DFD8FC] border border-[#7D61F2] rounded flex items-center justify-center"
-                >
-                  <span class="text-sm font-medium text-gray-800">04</span>
-                </div>
-              </div>
-              <div class="mt-[34px] relative">
-                <input
-                  type="text"
-                  placeholder="Buscar"
-                  class="w-[276px] h-[32px] pl-10 pr-4 rounded bg-white border border-gray-300 focus:outline-none"
-                />
-                <img
-                  src="/assets/images/Buscador-Icon.png"
-                  alt="Search"
-                  class="absolute top-2.5 left-3 w-4 h-4"
-                />
-              </div>
+        <!-- SIDEBAR -->
+        <aside class="fixed w-[241px] h-screen bg-white border-r border-[#E5E4E6]">
+            <div class="mt-4 ml-3">
+                <img src="./assets/images/Logo.png" alt="Logo" class="w-[192px] h-[50px]" />
             </div>
 
-            <!-- CHATS -->
-            <div
-              class="w-[304px] h-[623px] bg-[#FFFFFF] border border-[#E5E4E6]"
-            >
-              <div
-                class="w-full h-[83px] border-b border-[#E5E4E6] flex items-center p-2"
-              >
-                <img
-                  src="/assets/images/CarlosPr.png"
-                  alt="Profile"
-                  class="w-9 h-9 rounded-full"
-                />
-                <div class="ml-4 flex-1">
-                  <h3 class="text-sm font-medium text-gray-800">
-                    Carlos Escobar
-                  </h3>
-                  <div class="flex items-center text-gray-500 text-xs">
-                    <img
-                      src="/assets/images/Perfil-Icon.png"
-                      alt="Role"
-                      class="w-4 h-4 mr-1"
-                    />
-                    <span>Jaime Carrillo</span>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-1">
-                  <div class="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
-                  <span class="text-xs text-gray-800">3</span>
-                </div>
-              </div>
-              <div
-                class="w-full h-[83px] border-b border-[#E5E4E6] flex items-center p-2"
-              >
-                <img
-                  src="/assets/images/CarlosPr.png"
-                  alt="Profile"
-                  class="w-9 h-9 rounded-full"
-                />
-                <div class="ml-4 flex-1">
-                  <h3 class="text-sm font-medium text-gray-800">
-                    Carlos Escobar
-                  </h3>
-                  <div class="flex items-center text-gray-500 text-xs">
-                    <img
-                      src="/assets/images/Perfil-Icon.png"
-                      alt="Role"
-                      class="w-4 h-4 mr-1"
-                    />
-                    <span>Jaime Carrillo</span>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-1">
-                  <div class="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
-                  <span class="text-xs text-gray-800">3</span>
-                </div>
-              </div>
-              <div
-                class="w-full h-[83px] border-b border-[#E5E4E6] flex items-center p-2"
-              >
-                <img
-                  src="/assets/images/CarlosPr.png"
-                  alt="Profile"
-                  class="w-9 h-9 rounded-full"
-                />
-                <div class="ml-4 flex-1">
-                  <h3 class="text-sm font-medium text-gray-800">
-                    Carlos Escobar
-                  </h3>
-                  <div class="flex items-center text-gray-500 text-xs">
-                    <img
-                      src="/assets/images/Perfil-Icon.png"
-                      alt="Role"
-                      class="w-4 h-4 mr-1"
-                    />
-                    <span>Jaime Carrillo</span>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-1">
-                  <div class="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
-                  <span class="text-xs text-gray-800">3</span>
-                </div>
-              </div>
-              <div
-                class="w-full h-[83px] border-b border-[#E5E4E6] flex items-center p-2"
-              >
-                <img
-                  src="/assets/images/CarlosPr.png"
-                  alt="Profile"
-                  class="w-9 h-9 rounded-full"
-                />
-                <div class="ml-4 flex-1">
-                  <h3 class="text-sm font-medium text-gray-800">
-                    Carlos Escobar
-                  </h3>
-                  <div class="flex items-center text-gray-500 text-xs">
-                    <img
-                      src="/assets/images/Perfil-Icon.png"
-                      alt="Role"
-                      class="w-4 h-4 mr-1"
-                    />
-                    <span>Jaime Carrillo</span>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-1">
-                  <div class="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
-                  <span class="text-xs text-gray-800">3</span>
-                </div>
-              </div>
+            <div class="mt-[29px]">
+                <ul class="space-y-2">
+                    <li class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer">
+                        <img src="/assets/images/Dashboard.png" alt="Icon" class="w-4 h-4" />
+                        <span class="ml-3 text-sm text-gray-700">Dashboard</span>
+                    </li>
+                    <li class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer">
+                        <img src="/assets/images/Flows.png" alt="Icon" class="w-4 h-4" />
+                        <span class="ml-3 text-sm text-gray-700">Flows</span>
+                    </li>
+                    <li class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer">
+                        <img src="/assets/images/Chats.png" alt="Icon" class="w-4 h-4" />
+                        <span class="ml-3 text-sm text-gray-700">Chats</span>
+                    </li>
+                    <li class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer">
+                        <img src="/assets/images/Users.png" alt="Icon" class="w-4 h-4" />
+                        <span class="ml-3 text-sm text-gray-700">Users</span>
+                    </li>
+                    <li class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer">
+                        <img src="/assets/images/Contactos.png" alt="Icon" class="w-4 h-4" />
+                        <span class="ml-3 text-sm text-gray-700">Contactos</span>
+                    </li>
+                    <li class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer">
+                        <img src="/assets/images/Flujos.png" alt="Icon" class="w-4 h-4" />
+                        <span class="ml-3 text-sm text-gray-700">Flujos</span>
+                    </li>
+                    <li class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer">
+                        <img src="/assets/images/Conversaciones.png" alt="Icon" class="w-4 h-4" />
+                        <span class="ml-3 text-sm text-gray-700">Conversaciones</span>
+                    </li>
+                    <li class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer">
+                        <img src="/assets/images/PasosConversacion.png" alt="Icon" class="w-4 h-4" />
+                        <span class="ml-3 text-sm text-gray-700">Pasos en Conversación</span>
+                    </li>
+                    <li class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer">
+                        <img src="/assets/images/Roles.png" alt="Icon" class="w-4 h-4" />
+                        <span class="ml-3 text-sm text-gray-700">Roles</span>
+                    </li>
+                    <li class="flex items-center w-[240px] h-[51px] px-4 hover:bg-[#E9E3FF] cursor-pointer">
+                        <img src="/assets/images/Acciones.png" alt="Icon" class="w-4 h-4" />
+                        <span class="ml-3 text-sm text-gray-700">Acciones</span>
+                    </li>
+                </ul>
             </div>
-          </div>
+        </aside>
 
-          <!-- OPEN CHAT -->
-          <div class="w-[846px] flex">
-            <div
-              class="w-[580px] h-[776px] bg-white border border-[#E5E4E6] flex flex-col"
-            >
-              <div class="flex-1 overflow-y-auto p-4 ml-[15px] mr-[7px]">
-                <div class="flex flex-col space-y-4">
-                  <div class="flex items-center space-x-2">
-                    <div
-                      class="bg-[#F3F0FF] p-2 rounded-lg max-w-xs flex items-center space-x-2"
-                    >
-                      <span>Mensaje recibido</span>
-                      <span class="w-4 h-4">
-                        <img
-                          src="/assets/images/MsjOptions.png"
-                          alt="Opciones de Mensaje"
-                        />
-                      </span>
-                    </div>
+        <!-- NAVBAR -->
+        <nav
+            class="fixed top-0 left-[241px] w-[1286px] h-[57px] bg-white border-b border-[#E5E4E6] flex items-center justify-end pr-6">
+            <div class="flex items-center space-x-2">
+                <img src="/assets/images/Notificaciones.png" alt="Notification" class="w-4 h-4" />
+                <img src="/assets/images/Perfil.png" alt="Profile" class="w-6 h-6 rounded-full" />
+            </div>
+        </nav>
 
-                    <div x-data="{ reactionMsj: false }" class="relative">
-                      <span>
-                        <button @click="reactionMsj = !reactionMsj">
-                          <img
-                            src="/assets/images/Emoji.png"
-                            alt="Mensaje reaccion"
-                            class="w-5 h-5"
-                          />
-                        </button>
-                      </span>
+        <main class="w-full h-screen bg-gray-100 flex flex-col">
 
-                      <div
-                        x-show="reactionMsj"
-                        @click.away="reactionMsj = false"
-                        class="absolute right-0 mt-2 bg-white shadow-lg rounded-lg p-3 w-48 z-50"
-                      >
-                        <div class="grid grid-cols-4 gap-2 w-[178px] h-[40px]">
-                          <button
-                            @click="reactionMsj = false"
-                            class="text-lg hover:bg-gray-100 p-1 rounded"
-                          >
-                            <img
-                              src="/assets/images/reactions/Lol.png"
-                              alt="Lol"
-                            />
-                          </button>
-                          <button
-                            @click="reactionMsj = false"
-                            class="text-lg hover:bg-gray-100 p-1 rounded"
-                          >
-                            <img
-                              src="/assets/images/reactions/Love.png"
-                              alt="Like"
-                            />
-                          </button>
-                          <button
-                            @click="reactionMsj = false"
-                            class="text-lg hover:bg-gray-100 p-1 rounded"
-                          >
-                            <img
-                              src="/assets/images/reactions/Like.png"
-                              alt="Love"
-                            />
-                          </button>
-                          <button
-                            @click="reactionMsj = false"
-                            class="text-lg hover:bg-gray-100 p-1 rounded"
-                          >
-                            <img
-                              src="/assets/images/reactions/Check.png"
-                              alt="Check"
-                            />
-                          </button>
+            <div class="mt-[75px] ml-[264px] flex">
+
+                <div>
+                    <div class="w-[304px] h-[153px] bg-[#CBE5FE] p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
+                                <h2 class="text-lg font-bold text-gray-800">POR HACER</h2>
+                            </div>
+                            <div
+                                class="w-[43px] h-[27px] bg-[#DFD8FC] border border-[#7D61F2] rounded flex items-center justify-center">
+                                <span class="text-sm font-medium text-gray-800">04</span>
+                            </div>
                         </div>
-                      </div>
+                        <div class="mt-[34px] relative">
+                            <input type="text" placeholder="Buscar"
+                                class="w-[276px] h-[32px] pl-10 pr-4 rounded bg-white border border-gray-300 focus:outline-none" />
+                            <img src="/assets/images/Buscador-Icon.png" alt="Search"
+                                class="absolute top-2.5 left-3 w-4 h-4" />
+                        </div>
                     </div>
-                  </div>
-
-                  <div
-                    class="self-end bg-blue-500 text-white p-2 rounded-lg max-w-xs flex items-center space-x-2"
-                  >
-                    <span class="w-4 h-4">
-                      <img
-                        src="/assets/images/MsjOptions.png"
-                        alt="Opciones de Mensaje"
-                      />
-                    </span>
-                    <span>Mensaje enviado</span>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="h-[39px] bg-[#F3F0FF] flex items-center px-4 ml-[19px] mr-[7px] mb-[27px] rounded-[6px]"
-              >
-                <span class="text-[12px] text-[#7D61F2]"
-                  >Crear nota interna</span
-                >
-                <input
-                  type="text"
-                  class="ml-4 w-[349px] h-[29px] rounded-[6px] px-2"
-                  placeholder="Nota interna"
-                />
-
-                <img
-                  src="/assets/images/Edit.png"
-                  alt="Edit"
-                  class="w-[14px] h-[14px] ml-2"
-                />
-
-                <img
-                  src="/assets/images/Audio.png"
-                  alt="Audio"
-                  class="w-[9px] h-[14px] ml-[20px]"
-                />
-              </div>
-
-              <div
-                class="border-t ml-[19px] mr-[7px] border-[#A7A7A7] mb-[39px]"
-              ></div>
-
-              <div
-                class="h-[74px] bg-[#F3F0FF] flex items-center px-4 ml-[15px] mr-[7px] mt-auto mb-[14px] rounded-[7px] relative"
-                x-data="{ open: false }"
-              >
-                <img
-                  src="/assets/images/Multimedia.png"
-                  alt="Add"
-                  class="w-5 h-5 mr-[17px] cursor-pointer"
-                  @click="open = !open"
-                />
-
-                <div
-                  x-show="open"
-                  @click.away="open = false"
-                  class="absolute left-[-215px] top-[-326px] w-[225px] h-[400px] bg-white border border-gray-300 shadow-md rounded-lg z-10"
-                  x-transition
-                >
-                  <ul
-                    class="text-[14px] text-gray-700 mt-[30px] space-y-[23px] ml-[15px]"
-                  >
-                    <li class="flex items-center px-4 space-x-[10px]">
-                      <img
-                        src="/assets/images/ImgYVid.png"
-                        alt="Fotos y videos"
-                        class="w-4 h-4"
-                      />
-                      <span>Fotos y videos</span>
-                    </li>
-                    <li class="flex items-center px-4 space-x-[10px]">
-                      <img
-                        src="/assets/images/Doc.png"
-                        alt="Documento"
-                        class="w-4 h-4"
-                      />
-                      <span>Documento</span>
-                    </li>
-                    <li class="flex items-center px-4 space-x-[10px]">
-                      <img
-                        src="/assets/images/VoiceNot.png"
-                        alt="Nota de voz"
-                        class="w-4 h-4"
-                      />
-                      <span>Nota de voz</span>
-                    </li>
-                    <li class="flex items-center px-4 space-x-[10px]">
-                      <img
-                        src="/assets/images/MsjPlant.png"
-                        alt="Mensajes de plantilla"
-                        class="w-4 h-4"
-                      />
-                      <span>Mensajes de plantilla</span>
-                    </li>
-                    <li class="flex items-center px-4 space-x-[10px]">
-                      <img
-                        src="/assets/images/Reminder.png"
-                        alt="Agregar recordatorio"
-                        class="w-4 h-4"
-                      />
-                      <span>Agregar recordatorio</span>
-                    </li>
-                    <li class="flex items-center px-4 space-x-[10px]">
-                      <img
-                        src="/assets/images/Action.png"
-                        alt="Registrar acción"
-                        class="w-4 h-4"
-                      />
-                      <span>Registrar acción</span>
-                    </li>
-                    <li class="flex items-center px-4 space-x-[10px]">
-                      <img
-                        src="/assets/images/Import.png"
-                        alt="Importar conversacion"
-                        class="w-4 h-4"
-                      />
-                      <span>Importar conversacion</span>
-                    </li>
-                    <li class="flex items-center px-4 space-x-[10px]">
-                      <img
-                        src="/assets/images/Export.png
-                                    "
-                        alt="Exportar conversacion"
-                        class="w-4 h-4"
-                      />
-                      <span>Exportar conversacion</span>
-                    </li>
-                  </ul>
                 </div>
 
-                <div class="relative w-[449px] h-[40px]">
-                  <input
-                    type="text"
-                    class="w-full h-full bg-white border border-gray-300 rounded-[7px] px-4 pl-10 pr-12"
-                    placeholder="Escribe tu mensaje"
-                  />
-                  <img
-                    src="/assets/images/Emoji.png"
-                    alt="Emoji"
-                    class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
-                  />
-                  <img
-                    src="/assets/images/Send.png"
-                    alt="Send"
-                    class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
-                  />
+                <!-- CHATS -->
+                <div x-data="{ 
+                    selectedChat: null, 
+                    chats: [
+                        { 
+                            name: 'Carlos Escobar', 
+                            role: 'Jaime Carrillo', 
+                            image: '/assets/images/CarlosPr.png', 
+                            unread: 3, 
+                            messages: [
+                                { type: 'received', text: 'Hola Jaime' },
+                                { type: 'sent', text: 'Hola' },
+                                { type: 'received', text: 'Muy bien, gracias por preguntar.' }
+                            ] 
+                        },
+                        { 
+                            name: 'Ana López', 
+                            role: 'María García', 
+                            image: '/assets/images/CarlosPr.png', 
+                            unread: 5, 
+                            messages: [
+                                { type: 'received', text: 'Hola María, ¿ya revisaste los documentos?' },
+                                { type: 'sent', text: 'Sí, Ana. Están perfectos.' },
+                                { type: 'received', text: 'Genial, gracias.' }
+                            ] 
+                        },
+                        { 
+                            name: 'Luis Martínez', 
+                            role: 'Pedro Jiménez', 
+                            image: '/assets/images/CarlosPr.png', 
+                            unread: 1, 
+                            messages: [
+                                { type: 'received', text: 'Pedro, ¿qué opinas del proyecto?' },
+                                { type: 'sent', text: 'Creo que está avanzando bien.' },
+                                { type: 'received', text: 'Perfecto, sigamos así.' }
+                            ] 
+                        },
+                    ] 
+                }" class="flex mt-[152px] ml-[-304px]">
+
+                    <!-- Chats List -->
+                    <div class="w-[304px] h-[623px] bg-[#FFFFFF] border border-[#E5E4E6] overflow-y-auto">
+                        <template x-for="(chat, index) in chats" :key="index">
+                            <div @click="selectedChat = index"
+                                class="w-full h-[83px] border-b border-[#E5E4E6] flex items-center p-2 cursor-pointer"
+                                :class="{ 'bg-gray-100': selectedChat === index }">
+                                <img :src="chat.image" alt="Profile" class="w-9 h-9 rounded-full" />
+                                <div class="ml-4 flex-1">
+                                    <h3 class="text-sm font-medium text-gray-800" x-text="chat.name"></h3>
+                                    <div class="flex items-center text-gray-500 text-xs">
+                                        <img src="/assets/images/Perfil-Icon.png" alt="Role" class="w-4 h-4 mr-1" />
+                                        <span x-text="chat.role"></span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
+                                    <span class="text-xs text-gray-800" x-text="chat.unread"></span>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- Chats Details -->
+                    <div class="w-[846px] flex mt-[-153px]" x-show="selectedChat !== null">
+                        <div class="w-[580px] h-[776px] bg-white border border-[#E5E4E6] flex flex-col">
+                            <div class="flex-1 overflow-y-auto p-4 ml-[15px] mr-[7px]">
+                                <div class="flex flex-col space-y-4">
+                                    <template x-for="message in chats[selectedChat].messages" :key="message.text">
+                                        <div
+                                            :class="message.type === 'received' ? 'flex items-center space-x-2' : 'self-end'">
+                                            <div :class="message.type === 'received' ? 'bg-[#F3F0FF]' : 'bg-blue-500 text-white' 
+                                                + ' p-2 rounded-lg max-w-xs flex items-center space-x-2'">
+                                                <span x-text="message.text"></span>
+                                                <span class="w-4 h-4">
+                                                    <img src="/assets/images/MsjOptions.png"
+                                                        alt="Opciones de Mensaje" />
+                                                </span>
+                                            </div>
+                                            <div x-data="{ reactionMsj: false }" class="relative"
+                                                x-show="message.type === 'received'">
+                                                <span>
+                                                    <button @click="reactionMsj = !reactionMsj">
+                                                        <img src="/assets/images/Emoji.png" alt="Mensaje reaccion"
+                                                            class="w-5 h-5" />
+                                                    </button>
+                                                </span>
+                                                <div x-show="reactionMsj" @click.away="reactionMsj = false"
+                                                    class="absolute right-0 mt-2 bg-white shadow-lg rounded-lg p-3 w-48 z-50">
+                                                    <div class="grid grid-cols-4 gap-2 w-[178px] h-[40px]">
+                                                        <button @click="reactionMsj = false"
+                                                            class="text-lg hover:bg-gray-100 p-1 rounded">
+                                                            <img src="/assets/images/reactions/Lol.png" alt="Lol" />
+                                                        </button>
+                                                        <button @click="reactionMsj = false"
+                                                            class="text-lg hover:bg-gray-100 p-1 rounded">
+                                                            <img src="/assets/images/reactions/Love.png" alt="Love" />
+                                                        </button>
+                                                        <button @click="reactionMsj = false"
+                                                            class="text-lg hover:bg-gray-100 p-1 rounded">
+                                                            <img src="/assets/images/reactions/Like.png" alt="Like" />
+                                                        </button>
+                                                        <button @click="reactionMsj = false"
+                                                            class="text-lg hover:bg-gray-100 p-1 rounded">
+                                                            <img src="/assets/images/reactions/Check.png" alt="Check" />
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+
+                            <div class="h-[74px] bg-[#F3F0FF] flex items-center px-4 ml-[15px] mr-[7px] mt-auto mb-[14px] rounded-[7px] relative"
+                                x-data="{ open: false }">
+                                <img src="/assets/images/Multimedia.png" alt="Add"
+                                    class="w-5 h-5 mr-[17px] cursor-pointer" @click="open = !open" />
+                                <div x-show="open" @click.away="open = false"
+                                    class="absolute left-[-215px] top-[-326px] w-[225px] h-[400px] bg-white border border-gray-300 shadow-md rounded-lg z-10"
+                                    x-transition>
+                                    <ul class="text-[14px] text-gray-700 mt-[30px] space-y-[23px] ml-[15px]">
+                                        <li class="flex items-center px-4 space-x-[10px]">
+                                            <img src="/assets/images/ImgYVid.png" alt="Fotos y videos"
+                                                class="w-4 h-4" />
+                                            <span>Fotos y videos</span>
+                                        </li>
+                                        <li class="flex items-center px-4 space-x-[10px]">
+                                            <img src="/assets/images/Doc.png" alt="Documento" class="w-4 h-4" />
+                                            <span>Documento</span>
+                                        </li>
+                                        <li class="flex items-center px-4 space-x-[10px]">
+                                            <img src="/assets/images/VoiceNot.png" alt="Nota de voz" class="w-4 h-4" />
+                                            <span>Nota de voz</span>
+                                        </li>
+                                        <li class="flex items-center px-4 space-x-[10px]">
+                                            <img src="/assets/images/MsjPlant.png" alt="Mensajes de plantilla"
+                                                class="w-4 h-4" />
+                                            <span>Mensajes de plantilla</span>
+                                        </li>
+                                        <li class="flex items-center px-4 space-x-[10px]">
+                                            <img src="/assets/images/Reminder.png" alt="Agregar recordatorio"
+                                                class="w-4 h-4" />
+                                            <span>Agregar recordatorio</span>
+                                        </li>
+                                        <li class="flex items-center px-4 space-x-[10px]">
+                                            <img src="/assets/images/Action.png" alt="Registrar acción"
+                                                class="w-4 h-4" />
+                                            <span>Registrar acción</span>
+                                        </li>
+                                        <li class="flex items-center px-4 space-x-[10px]">
+                                            <img src="/assets/images/Import.png" alt="Importar conversacion"
+                                                class="w-4 h-4" />
+                                            <span>Importar conversacion</span>
+                                        </li>
+                                        <li class="flex items-center px-4 space-x-[10px]">
+                                            <img src="/assets/images/Export.png
+                                                          " alt="Exportar conversacion" class="w-4 h-4" />
+                                            <span>Exportar conversacion</span>
+                                        </li>
+                                    </ul>
+                                    </ul>
+                                </div>
+                                <div class="relative w-[449px] h-[40px]">
+                                    <input type="text"
+                                        class="w-full h-full bg-white border border-gray-300 rounded-[7px] px-4 pl-10 pr-12"
+                                        placeholder="Escribe tu mensaje" />
+                                    <img src="/assets/images/Emoji.png" alt="Emoji"
+                                        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5" />
+                                    <img src="/assets/images/Send.png" alt="Send"
+                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5" />
+                                </div>
+                                <img src="/assets/images/Clock.png" alt="Clock" class="w-5 h-5 ml-2" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <img
-                  src="/assets/images/Clock.png"
-                  alt="Clock"
-                  class="w-5 h-5 ml-2"
-                />
-              </div>
+
+
+                <div class="absolute w-[266px] h-[770px] bg-white border border-[#E5E4E6] ml-[885px]">
+                    <ul class="space-y-4 p-4">
+                        <li x-data="{ open: false }" class="border-b border-[#E5E4E6] mb-[18px] pb-[10px]">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-700">Fuente del lead</span>
+                                <img src="/assets/images/DepIcon.png" alt="Check"
+                                    class="w-[6.67px] h-[3.33px] cursor-pointer" @click="open = !open" />
+                            </div>
+                            <div x-show="open" class="mt-2 text-[12px]">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </div>
+                        </li>
+
+                        <li x-data="{ open: false }" class="border-b border-[#E5E4E6] mb-[18px] pb-[10px]">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-700">Información sobre el usuario</span>
+                                <img src="/assets/images/DepIcon.png" alt="Check"
+                                    class="w-[6.67px] h-[3.33px] cursor-pointer" @click="open = !open" />
+                            </div>
+                            <div x-show="open" class="mt-2 text-[12px]">
+                                Detalles sobre el perfil del usuario.
+                            </div>
+                        </li>
+
+                        <li x-data="{ open: false }" class="border-b border-[#E5E4E6] mb-[18px] pb-[10px]">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-700">Notas</span>
+                                <img src="/assets/images/DepIcon.png" alt="Check"
+                                    class="w-[6.67px] h-[3.33px] cursor-pointer" @click="open = !open" />
+                            </div>
+                            <div x-show="open" class="mt-2 text-[12px]">
+                                Espacio para tus notas adicionales.
+                            </div>
+                        </li>
+
+                        <li x-data="{ open: false }" class="relative border-b border-[#E5E4E6] mb-[18px] pb-[10px]">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-700">Historial de acciones</span>
+                                <img src="/assets/images/DepIcon.png" alt="Check"
+                                    class="w-[6.67px] h-[3.33px] cursor-pointer" @click="open = !open" />
+                            </div>
+                            <div x-show="open" class="mt-4 space-y-2">
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                                    <span class="ml-2 text-[14px] text-[#343434]">20 Enero 24, 9:31 PM</span>
+                                </div>
+                                <div class="flex items-center ml-3">
+                                    <img src="/assets/images/Phone.png" alt="Phone"
+                                        class="w-[14px] h-[14px] mb-[25px]" />
+                                    <span class="ml-1 text-[12px] text-gray-600 mb-[23px]">Llamada realizada</span>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                                    <span class="ml-2 text-[14px] text-[#343434]">28 Enero 24, 10:05 AM</span>
+                                </div>
+                                <div class="flex items-center ml-3">
+                                    <img src="/assets/images/Phone.png" alt="Phone"
+                                        class="w-[14px] h-[14px] mb-[25px]" />
+                                    <span class="ml-1 text-[12px] text-gray-600 mb-[23px]">Llamada realizada</span>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                                    <span class="ml-2 text-[14px] text-[#343434]">30 Enero 24, 11:12 PM</span>
+                                </div>
+                                <div class="flex items-center ml-3">
+                                    <img src="/assets/images/Phone.png" alt="Phone"
+                                        class="w-[14px] h-[14px] mb-[25px]" />
+                                    <span class="ml-1 text-[12px] text-gray-600 mb-[23px]">Llamada realizada</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
             </div>
-
-            <div class="w-[266px] bg-white border border-[#E5E4E6]">
-              <ul class="space-y-4 p-4">
-                <li
-                  class="flex justify-between items-center border-b border-[#E5E4E6] mb-[18px] pb-[10px]"
-                >
-                  <span class="text-sm text-gray-700">Fuente del lead</span>
-                  <img
-                    src="/assets/images/DepIcon.png"
-                    alt="Check"
-                    class="w-[6.67px] h-[3.33px]"
-                  />
-                </li>
-                <li
-                  class="flex justify-between items-center border-b border-[#E5E4E6] mb-[18px] pb-[10px]"
-                >
-                  <span class="text-sm text-gray-700"
-                    >Información sobre el usuario</span
-                  >
-                  <img
-                    src="/assets/images/DepIcon.png"
-                    alt="Check"
-                    class="w-[6.67px] h-[3.33px]"
-                  />
-                </li>
-                <li
-                  class="flex justify-between items-center border-b border-[#E5E4E6] mb-[18px] pb-[10px]"
-                >
-                  <span class="text-sm text-gray-700">Notas</span>
-                  <img
-                    src="/assets/images/DepIcon.png"
-                    alt="Check"
-                    class="w-[6.67px] h-[3.33px]"
-                  />
-                </li>
-                <li class="relative">
-                  <span class="text-sm text-gray-700"
-                    >Historial de acciones</span
-                  >
-                  <div class="mt-4 space-y-2">
-                    <div class="flex items-center">
-                      <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span class="ml-2 text-[14px] text-[#343434]"
-                        >20 Enero 24, 9:31 PM</span
-                      >
-                    </div>
-                    <div class="flex items-center ml-3">
-                      <img
-                        src="/assets/images/Phone.png"
-                        alt="Phone"
-                        class="w-[14px] h-[14px] mb-[25px]"
-                      />
-                      <span class="ml-1 text-[12px] text-gray-600 mb-[23px]"
-                        >Llamada realizada</span
-                      >
-                    </div>
-
-                    <div class="flex items-center">
-                      <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span class="ml-2 text-[14px] text-[#343434]"
-                        >28 Enero 24, 10:05 AM</span
-                      >
-                    </div>
-                    <div class="flex items-center ml-3">
-                      <img
-                        src="/assets/images/Phone.png"
-                        alt="Phone"
-                        class="w-[14px] h-[14px] mb-[25px]"
-                      />
-                      <span class="ml-1 text-[12px] text-gray-600 mb-[23px]"
-                        >Llamada realizada</span
-                      >
-                    </div>
-
-                    <div class="flex items-center">
-                      <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span class="ml-2 text-[14px] text-[#343434]"
-                        >30 Enero 24, 11:12 PM</span
-                      >
-                    </div>
-                    <div class="flex items-center ml-3">
-                      <img
-                        src="/assets/images/Phone.png"
-                        alt="Phone"
-                        class="w-[14px] h-[14px] mb-[25px]"
-                      />
-                      <span class="ml-1 text-[12px] text-gray-600 mb-[23px]"
-                        >Llamada realizada</span
-                      >
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </main>
     </div>
-  </body>
+    </main>
+    </div>
+</body>
+
 </html>
